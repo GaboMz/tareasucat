@@ -2,7 +2,7 @@
 
 Tarea para la materia de Estructura de Datos. 
 
-### Código
+### Codigo para que funcione
 Crea e imprime dos arreglos:
 1. Un arreglo de 5 notas (números).
 2. Un arreglo de 3 colores (texto).
