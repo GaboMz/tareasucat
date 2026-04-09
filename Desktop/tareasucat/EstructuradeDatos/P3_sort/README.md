@@ -1,13 +1,11 @@
-# Practica 1: Arreglos con Go
+# Practica 3: Sort con Go
 
 Tarea para la materia de Estructura de Datos. 
 
 ### Código
-Crea e imprime dos arreglos:
-1. Un arreglo de 5 notas (números).
-2. Un arreglo de 3 colores (texto).
+Se crea el sort respectivo y se inicializa de acuerdo a los siguientes datos: 
 
 ### Cómo ejecutarlo
 Abre tu terminal en esta carpeta y escribe:
 ```bash
-go run main.goo
+go run main.go
