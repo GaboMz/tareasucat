@@ -1,58 +1,39 @@
-"""
-SEMANA 1  JUEGO DIAGNOSTICO
-"""
-##ESTUDIANTE : MOISES GABRIEL MALPARTIDA ZABALETA
-def jugar_ahorcado():
-    palabra = "UCATEC"
-    adivinadas = []
-    intentos = 6
+palabra = "PYTHON"
+adivinadas = []
+intentos = 6
 
-    while intentos > 0:
-        progreso = ""
+print("AHORCADO")
 
-        # PROGRESO
-        for letra in palabra:
-            if letra in adivinadas:
-                progreso = progreso + letra + " "
-            else:
-                progreso = progreso + "_ "
+while intentos > 0:
+    progreso = ""
 
-        print("Palabra: " + progreso)
-        print("Intentos restantes: " + str(intentos))
-        letra_usuario = input("Ingresa una letra: ").strip().upper()
-
-
-        # PRIMERA VALIDACION 
-        if len(letra_usuario) != 1 or not letra_usuario.isalpha():
-            print("Por favor, ingresa solo una letra.")
-            continue
-        if letra_usuario in adivinadas:
-            print("La letra ya fue usada. Intenta con otra.")
-            continue
-        adivinadas.append(letra_usuario)
-
-
-        # VERIFICACION DE PALABRA
-        if letra_usuario in palabra:
-            print("Correcto.")
+    for letra in palabra:
+        if letra in adivinadas:
+            progreso = progreso + letra + " "
         else:
-            print("Incorrecto.")
-            intentos = intentos - 1
+            progreso = progreso + "_ "
 
 
-        # CONDICIONAL DE VICTORIA
-        ganado = True
-        for letra in palabra:
-            if letra not in adivinadas:
-                ganado = False
-                break      
-        if ganado:
-            print("Ganaste. La palabra era: " + palabra)
-            break
+    print("\npalabra:", progreso)
+    print("intentos:", intentos)
+    letra_usuario = input("ingresa una letra ").upper()
 
-        #CONDICIONAL DE DERROTA
-        if intentos == 0:
-            print("Perdiste. La palabra correcta era: " + palabra)
 
-if __name__ == "__main__":
-    jugar_ahorcado()
+    if letra_usuario in adivinadas:
+        print(" la letra ya fue usada")
+        continue
+
+    adivinadas.append(letra_usuario)
+
+    if letra_usuario in palabra:
+        print("correcto")
+    else:
+        print("incorrecto")
+        intentos = intentos - 1
+
+    if progreso.replace(" ", "") == palabra:
+        print("ganaste la palabra es", palabra)
+        break
+
+if intentos == 0:
+    print("\nperdiste la palabra es", palabra)
